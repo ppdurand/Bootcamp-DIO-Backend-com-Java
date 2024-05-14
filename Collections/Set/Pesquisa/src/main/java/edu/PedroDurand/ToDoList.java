@@ -21,13 +21,13 @@ public class ToDoList {
                 '}';
     }
 
-    public void addTask(String description){
+    public void addTask(String description) {
         taskSet.add(new Task(description));
     }
 
-    public void removeTask(String description){
-        for(Task t : taskSet){
-            if(t.getDescription() == description){
+    public void removeTask(String description) {
+        for (Task t : taskSet) {
+            if (t.getDescription() == description) {
                 taskSet.remove(t);
                 break;
             }
@@ -35,43 +35,43 @@ public class ToDoList {
     }
 
 
-    public int taskCount(){
+    public int taskCount() {
         return taskSet.size();
     }
 
-    public Set<Task> getConludeTask(){
+    public Set<Task> getConludeTask() {
         Set<Task> concludeTask = new HashSet<>();
-        for(Task t : taskSet){
-            if(t.getStatus() == TaskStatus.CONCLUIDA){
+        for (Task t : taskSet) {
+            if (t.getStatus() == TaskStatus.CONCLUIDA) {
                 concludeTask.add(t);
             }
         }
         return concludeTask;
     }
 
-    public Set<Task> getPendingTask(){
+    public Set<Task> getPendingTask() {
         Set<Task> pendingTask = new HashSet<>();
-        for(Task t : taskSet){
-            if(t.getStatus() == TaskStatus.PENDENTE){
+        for (Task t : taskSet) {
+            if (t.getStatus() == TaskStatus.PENDENTE) {
                 pendingTask.add(t);
             }
         }
         return pendingTask;
     }
 
-    public void statusChanger(String description){
-        for (Task t : taskSet){
-            if(t.getDescription() == description){
-                if(t.getStatus() == TaskStatus.CONCLUIDA){
+    public void statusChanger(String description) {
+        for (Task t : taskSet) {
+            if (t.getDescription() == description) {
+                if (t.getStatus() == TaskStatus.CONCLUIDA) {
                     t.setStatus(TaskStatus.PENDENTE);
-                }else{
+                } else {
                     t.setStatus(TaskStatus.CONCLUIDA);
                 }
             }
         }
     }
 
-    public void cleanTasks(){
+    public void cleanTasks() {
         taskSet.removeAll(taskSet);
     }
 
