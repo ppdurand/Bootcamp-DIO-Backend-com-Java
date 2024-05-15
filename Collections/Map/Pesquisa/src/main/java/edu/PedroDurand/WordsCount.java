@@ -1,12 +1,13 @@
 package edu.PedroDurand;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class WordsCount {
     private Map<String, Integer> wordCount;
 
-    public WordsCount(Map<String, Integer> wordCount) {
-        this.wordCount = wordCount;
+    public WordsCount() {
+        this.wordCount = new HashMap<>();
     }
 
     public Map<String, Integer> getWordCount() {
