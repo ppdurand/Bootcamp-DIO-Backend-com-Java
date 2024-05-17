@@ -22,6 +22,7 @@ public class ShoppingCart {
                 removeItemsList.add(i);
             }
         }
+        items.stream().
         items.removeAll(removeItemsList);
     }
 
