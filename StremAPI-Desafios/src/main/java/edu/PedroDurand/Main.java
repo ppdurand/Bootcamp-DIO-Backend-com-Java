@@ -1,6 +1,5 @@
 package edu.PedroDurand;
 
-import java.awt.*;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -8,6 +7,7 @@ import java.util.stream.Collectors;
 public class Main {
     public static void main(String[] args) {
         List<Integer> numeros = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 5, 4, 3);
+        MetodosAux metodosAux = new MetodosAux();
 
         //Desafio 1 - Mostre a lista na ordem numérica:
         System.out.println(numeros.stream().sorted().collect(Collectors.toList()));
@@ -29,5 +29,22 @@ public class Main {
                 mapToInt(Integer::intValue).
                 average());
 
+        //Desafio 6 - Verificar se a lista contém algum número maior que 10:
+        System.out.println(numeros.stream().anyMatch(n -> n > 10));
+
+        //Desafio 7 - Encontrar o segundo número maior da lista:
+        System.out.println(numeros.stream().distinct()
+                .sorted((a, b) -> b - a)
+                .skip(1)
+                .findFirst());
+        //Desafio 8 - Somar os dígitos de todos os números da lista:
+        System.out.println(numeros.stream().mapToInt(metodosAux::somaDigitos).sum());
+
+        //Desafio 9 - Verificar se todos os números da lista são distintos (não se repetem):
+        System.out.println(numeros.stream().distinct().count() == numeros.size());
+
+        //Desafio 10 - Agrupe os valores ímpares múltiplos de 3 ou de 5:
+        System.out.println(numeros.stream().filter(n -> n % 2 != 0).filter(n -> n % 3 == 0 || n % 5 == 0).toList());
+        
     }
 }
