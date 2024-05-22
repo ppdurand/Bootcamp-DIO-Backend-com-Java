@@ -4,6 +4,8 @@ import edu.PedroDurand.conta.Conta;
 import edu.PedroDurand.conta.ContaCorrente;
 import edu.PedroDurand.conta.ContaPoupanca;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         Conta conta1 = new ContaPoupanca(new Cliente(1, "Pedro"),
@@ -21,6 +23,10 @@ public class Main {
 
         conta1.extratoBase();
         conta2.extratoBase();
+
+        Banco banco = new Banco("Nubank");
+        banco.setContas(Arrays.asList(conta1, conta2));
+        banco.imprimirClientes();
 
     }
 }

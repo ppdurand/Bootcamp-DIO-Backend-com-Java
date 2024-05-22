@@ -75,4 +75,14 @@ public class Conta implements IConta{
         System.out.println(String.format("Numero: %d", this.getNumero()));
         System.out.println(String.format("Saldo: %.2f", this.getSaldo()));
     }
+
+    @Override
+    public String toString() {
+        return "Conta{" +
+                "cliente=" + cliente +
+                ", saldo=" + saldo +
+                ", agencia=" + agencia +
+                ", numero=" + numero +
+                '}';
+    }
 }

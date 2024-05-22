@@ -21,4 +21,12 @@ public class Banco {
     public List<Conta> getContas() {
         return contas;
     }
+
+    public void setContas(List<Conta> contas) {
+        this.contas = contas;
+    }
+
+    public void imprimirClientes(){
+        System.out.println(contas);
+    }
 }
