@@ -76,6 +76,6 @@ public class Main {
         System.out.println(numeros.stream().filter(n -> n % 3 == 0 && n % 5 ==0)
                 .mapToInt(Integer::intValue)
                 .sum());
-        
+
     }
 }
