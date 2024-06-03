@@ -9,6 +9,9 @@ import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
+
+
+
         Curso c = new Curso("Java Backend", "Java Básico", 10);
         Curso c2 = new Curso("API em C#", "API REST com .NET", 8);
 
@@ -19,6 +22,7 @@ public class Main {
         bootcamp.getConteudos().add(c);
         bootcamp.getConteudos().add(c2);
         bootcamp.getConteudos().add(m);
+        System.out.println(c.calcularXp()) ;
 
         Dev dev = new Dev("Pedro");
         dev.inscreverBootcamp(bootcamp);
@@ -31,4 +35,6 @@ public class Main {
         System.out.println(dev.calcularTotalXp());
 
     }
+
+
 }
